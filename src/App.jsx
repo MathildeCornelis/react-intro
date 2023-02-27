@@ -5,7 +5,6 @@ import List from './component/List'
 
 
 function App() {
-
   return (
     <>
       <Title />
