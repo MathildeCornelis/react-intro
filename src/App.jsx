@@ -1,10 +1,16 @@
 import React from 'react'
+import Title from './component/Title'
+import Add from './component/Add'
+import List from './component/List'
+
 
 function App() {
 
   return (
     <>
-      <h1>hello</h1>
+      <Title />
+      <Add />
+      <List />
     </>
   )
 }
