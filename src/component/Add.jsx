@@ -1,11 +1,12 @@
 import React, {useRef} from 'react';
 
-const Add = () => {
+const Add = ({onAdd}) => {
     const inputRef = useRef();
 
     const clickHandler = () => {
         const inputElement = inputRef.current.value;
-        console.log(inputElement);
+        onAdd(inputElement);
+        // console.log(inputElement);
     }
     return (
         <section className='flex flex-col items-start xl:items-center p-5 font-sans text-l border-b-2 border-black border-opacity-20'>
@@ -15,5 +16,7 @@ const Add = () => {
         </section>
     );
 };
+
+
 
 export default Add;
