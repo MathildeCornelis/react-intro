@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Add from './Add';
+
+const LSKEY = 'MyTodoApp';
 
 const Parents = () => {
     const [value, setValue] = useState('');
     const [todos, setTodos] = useState([]);
 
     const handleAdd = (newValue) => {
-        setValue(newValue);
+        setValue('');
         setTodos([...todos, { text: newValue, checked: false }]);
     };
 
@@ -15,6 +17,17 @@ const Parents = () => {
         newTodos[index].checked = !newTodos[index].checked;
         setTodos(newTodos);
     };
+
+    useEffect(() => {
+        localStorage.setItem(LSKEY, JSON.stringify(todos));
+    }, [todos]);
+
+    useEffect(() => {
+        const localData = localStorage.getItem(LSKEY);
+        if (localData) {
+        setTodos(JSON.parse(localData));
+        }
+    }, []);
 
     return (
         <>
