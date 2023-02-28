@@ -4,12 +4,13 @@ import Add from './Add';
 
 const Parents = () => {
     const [Value, setValue] = useState('');
+    const [todos, setTodos] = useState([]);
 
     const handleAdd = (newValue) => {
         setValue(newValue)
         setTodos([...todos, newValue])
     };
-    const [todos, setTodos] = useState([]);
+    
         
     const [checked, setchecked] = useState(false);
     const checkedValue = checked ? 'none' : 'flex';
@@ -30,7 +31,7 @@ const Parents = () => {
                                     }} 
                                     onClick={() => setchecked(!checked)}
                                 />
-                                <p className='ml-3 xl:text-2xl'>{Value}</p>
+                                <p className='ml-3 xl:text-2xl'>{todo}</p>
                             </li>
                             
                         )

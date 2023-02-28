@@ -6,7 +6,7 @@ const Add = ({onAdd}) => {
     const clickHandler = () => {
         const inputElement = inputRef.current.value;
         onAdd(inputElement);
-        // console.log(inputElement);
+        inputRef.current.value = '';
     }
     return (
         <section className='flex flex-col items-start xl:items-center p-5 font-sans text-l border-b-2 border-black border-opacity-20'>
