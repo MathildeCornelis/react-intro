@@ -5,7 +5,7 @@ const LSKEY = 'MyTodoApp';
 
 const Parents = () => {
     const [value, setValue] = useState('');
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState(JSON.parse(localStorage.getItem(LSKEY)) || []);
 
     const handleAdd = (newValue) => {
         setValue('');
