@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import Add from './Add';
 
-const LSKEY = 'MyTodoApp';
-
 const Parents = () => {
+    const LSKEY = 'MyTodoApp';
+
     const [value, setValue] = useState('');
     const [todos, setTodos] = useState(JSON.parse(localStorage.getItem(LSKEY)) || []);
 
@@ -28,7 +28,6 @@ const Parents = () => {
         setTodos(JSON.parse(localData));
         }
     }, []);
-
     return (
         <>
             <Add onAdd={handleAdd} />
@@ -48,6 +47,6 @@ const Parents = () => {
             </section>
         </>
     );
-};
+}; 
 
 export default Parents;
